@@ -1,0 +1,10 @@
+[package]
+edition = "2021"
+name = "cfspeed_mqtt"
+version = "0.1.0"
+
+[dependencies]
+cfspeedtest = "1.2.6"
+dotenv = "0.15.0"
+reqwest = "0.12.7"
+rumqttc = "0.24.0"
