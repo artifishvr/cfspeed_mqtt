@@ -1,6 +1,6 @@
 # Cloudflare Speed Tests sent over MQTT
 
-This is a simple Rust program that performs a Cloudflare speed test every 30 seconds and sends the results over MQTT.
+This is a simple Rust program that performs a Cloudflare speed test on a user defined interval and sends the results over MQTT.
 
 Useful to integrate with home assistant for speed test stats on your dashboard.
 

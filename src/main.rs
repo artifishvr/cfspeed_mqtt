@@ -18,6 +18,7 @@ fn main() {
         env::var("MQTT_UPLOAD_TOPIC").expect("Missing MQTT_UPLOAD_TOPIC env var");
     let mqtt_download_topic =
         env::var("MQTT_DOWNLOAD_TOPIC").expect("Missing MQTT_DOWNLOAD_TOPIC env var");
+    let test_interval = env::var("TEST_INTERVAL").expect("Missing TEST_INTERVAL env var");
 
     loop {
         // Define speedtest options
@@ -93,6 +94,6 @@ fn main() {
         }
 
         println!("Test done, sleeping...");
-        thread::sleep(Duration::from_secs(30));
+        thread::sleep(Duration::from_secs(test_interval.parse().unwrap()));
     }
 }
