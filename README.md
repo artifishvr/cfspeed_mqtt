@@ -10,4 +10,25 @@ Inspired by [simonjenny/fastcom-mqtt](https://github.com/simonjenny/fastcom-mqtt
 
 ## Usage
 
-i can't get docker to build right now lol
+Docker images are built and published automatically to the [GitHub Container Registry](https://github.com/artifishvr/cfspeed_mqtt/pkgs/container/cfspeed_mqtt) on push to main.
+
+### Environment Variables
+
+| Name | Description | Required |
+| --- | --- | --- |
+| MQTT_HOST | Hostname of the MQTT broker | Yes |
+| MQTT_PORT | Port of the MQTT broker | Yes |
+| MQTT_UPLOAD_TOPIC | Topic to publish upload speeds to | Yes |
+| MQTT_DOWNLOAD_TOPIC | Topic to publish download speeds to | Yes |
+| TEST_INTERVAL | Interval in seconds to perform a speed test | Yes |
+
+### Example Docker Command
+
+```bash
+docker run -d \
+  --env MQTT_HOST=my-mqtt-broker.com \
+  --env MQTT_PORT=1883 \
+  --env MQTT_UPLOAD_TOPIC=speedtestup \
+  --env MQTT_DOWNLOAD_TOPIC=speedtestdown \
+  --env TEST_INTERVAL=3600 \
+   ghcr.io/artifishvr/cfspeed_mqtt:latest
